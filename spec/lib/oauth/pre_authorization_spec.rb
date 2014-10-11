@@ -148,6 +148,11 @@ module Doorkeeper::OAuth
         expect(subject).to be_authorizable
       end
 
+      it 'accepts when validation returns nil' do
+        @result = nil
+        expect(subject).to be_authorizable
+      end
+
       it 'rejects when validation fails' do
         @result = false
         expect(subject).not_to be_authorizable

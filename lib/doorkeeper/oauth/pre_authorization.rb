@@ -39,7 +39,7 @@ module Doorkeeper
 
       def validate
         super
-        unless extra_validation
+        if extra_validation === false
           @error ||= :invalid_scope
         end
       end
